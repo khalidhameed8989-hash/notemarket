@@ -5,7 +5,7 @@ import api from '../api';
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useCart();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [checking, setChecking] = useState(false);
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState('');
