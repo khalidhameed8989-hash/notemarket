@@ -12,6 +12,7 @@ import ProductDetail from './pages/ProductDetail';
 import { Login, Signup } from './pages/Auth';
 import Cart from './pages/Cart';
 import Orders from './pages/Orders';
+import Admin from './pages/Admin';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
               <Route path="/signup" element={<Signup />} />
               <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
               <Route path="/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} />
+              <Route path="/admin" element={<ProtectedRoute adminOnly={true}><Admin /></ProtectedRoute>} />
               <Route path="*" element={
                 <div style={{ textAlign: 'center', padding: '5rem' }}>
                   <h1 style={{ fontSize: '4rem', color: '#1a1a2e' }}>404</h1>
