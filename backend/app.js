@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: '*',
+  origin: 'https://notemarket-nine.vercel.app',
   credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
