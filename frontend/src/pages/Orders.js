@@ -47,7 +47,7 @@ const Orders = () => {
                   padding: '3px 10px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600,
                 }}>{order.status}</span>
                 <p style={{ margin: '6px 0 0', fontWeight: 700, fontSize: '1.1rem', color: '#1a1a2e' }}>
-                  ${parseFloat(order.total).toFixed(2)}
+                  Rs {parseFloat(order.total).toFixed(2)}
                 </p>
               </div>
             </div>
@@ -57,7 +57,7 @@ const Orders = () => {
                 <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                   <span style={{ color: '#444', fontSize: '0.9rem' }}>📄 {item.title}</span>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                    <span style={{ color: '#666', fontSize: '0.85rem' }}>${parseFloat(item.price).toFixed(2)}</span>
+                    <span style={{ color: '#666', fontSize: '0.85rem' }}>Rs {parseFloat(item.price).toFixed(2)}</span>
                     {order.status === 'completed' && (
                       <a
                         href={`/api/orders/${order.id}/download/${item.product_id}`}
