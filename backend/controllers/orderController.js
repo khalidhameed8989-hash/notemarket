@@ -59,7 +59,7 @@ const getMyOrders = async (req, res) => {
   try {
     const [orders] = await pool.query(`
       SELECT o.id, o.total, o.status, o.created_at,
-             JSON_ARRAYAGG(JSON_OBJECT('title', p.title, 'price', oi.price)) AS items
+             JSON_ARRAYAGG(JSON_OBJECT('title', p.title, 'price', oi.price, 'product_id', oi.product_id)) AS items
       FROM orders o
       JOIN order_items oi ON o.id = oi.order_id
       JOIN products p ON oi.product_id = p.id
